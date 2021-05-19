@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="892.0" prefWidth="1124.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.FXMLBancoSangreController">
+   <children>
+      <TabPane prefHeight="892.0" prefWidth="1124.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Donantes">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="104.0" layoutY="96.0" text="DNI" />
+                        <Label layoutX="103.0" layoutY="149.0" text="Nombre" />
+                        <Label layoutX="104.0" layoutY="196.0" text="Dirección" />
+                        <Label layoutX="618.0" layoutY="196.0" text="Teléfono" />
+                        <TextField fx:id="txtDNI" layoutX="211.0" layoutY="91.0" />
+                        <TextField fx:id="txtNombre" layoutX="211.0" layoutY="144.0" />
+                        <TextField fx:id="txtDireccion" layoutX="211.0" layoutY="191.0" />
+                        <TextField fx:id="txtCodPostal" layoutX="211.0" layoutY="248.0" />
+                        <TextField fx:id="txtLocalidad" layoutX="211.0" layoutY="299.0" />
+                        <DatePicker fx:id="txtFechaNac" layoutX="805.0" layoutY="91.0" />
+                        <TextField fx:id="txtMail" layoutX="805.0" layoutY="144.0" />
+                        <TextField fx:id="txtTelefono" layoutX="805.0" layoutY="191.0" />
+                        <Label layoutX="616.0" layoutY="96.0" text="Fecha de nacimiento" />
+                        <Label layoutX="616.0" layoutY="263.0" text="Grupo sanguíneo" />
+                        <Label layoutX="616.0" layoutY="304.0" text="factor RH" />
+                        <ChoiceBox fx:id="cbxGrupoSanguineo" layoutX="805.0" layoutY="248.0" prefWidth="150.0" />
+                        <ChoiceBox fx:id="cbxFactorRH" layoutX="805.0" layoutY="299.0" prefWidth="150.0" />
+                        <TableView fx:id="tblDonantes" layoutX="76.0" layoutY="368.0" prefHeight="340.0" prefWidth="1009.0">
+                          <columns>
+                            <TableColumn fx:id="tbcDNI" prefWidth="100.0" text="DNI" />
+                            <TableColumn fx:id="tbcNombre" minWidth="0.0" prefWidth="114.0" text="Nombre" />
+                              <TableColumn fx:id="tbcDireccion" prefWidth="111.0" text="Direción" />
+                              <TableColumn fx:id="tbcCodPostal" prefWidth="82.0" text="C.P." />
+                              <TableColumn fx:id="tbcLocalidad" prefWidth="102.0" text="Localidad" />
+                              <TableColumn fx:id="tbcFechaNac" prefWidth="99.0" text="Fecha Nac" />
+                              <TableColumn fx:id="tbcMail" prefWidth="107.0" text="E-Mail" />
+                              <TableColumn fx:id="tbcTelefono" prefWidth="111.0" text="Teléfono" />
+                              <TableColumn fx:id="tbcGrupoSanguineo" prefWidth="93.0" text="Grupo Sang" />
+                              <TableColumn fx:id="tbcFactorRH" prefWidth="89.0" text="Factor RH" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="btnConsultarDni" layoutX="76.0" layoutY="776.0" mnemonicParsing="false" onAction="#listenerBotonConsultarDNI" prefHeight="31.0" prefWidth="154.0" text="Consultar DNI" />
+                        <Button fx:id="btnConsultarTodos" layoutX="278.0" layoutY="776.0" mnemonicParsing="false" onAction="#listenerBotonConsultarTodos" prefHeight="31.0" prefWidth="155.0" text="Consultar todos" />
+                        <Button fx:id="btnInsertar" layoutX="486.0" layoutY="776.0" mnemonicParsing="false" onAction="#listenerBotonInsertar" prefHeight="31.0" prefWidth="153.0" text="Insertar" />
+                        <Button fx:id="btnModificar" layoutX="721.0" layoutY="776.0" mnemonicParsing="false" onAction="#listenerBotonModificar" prefHeight="31.0" prefWidth="153.0" text="modificar" />
+                        <Button fx:id="btnEliminar" layoutX="933.0" layoutY="776.0" mnemonicParsing="false" onAction="#listenerBotonEliminar" prefHeight="31.0" prefWidth="152.0" text="Eliminar" />
+                        <Label layoutX="105.0" layoutY="253.0" text="C.P." />
+                        <Label layoutX="104.0" layoutY="304.0" text="Localidad" />
+                        <Label layoutX="618.0" layoutY="149.0" text="E-mail" />
+                        <Label layoutX="345.0" layoutY="14.0" text="GESTIÓN BANCO DE SANGRE">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Donaciones">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="116.0" layoutY="85.0" text="DNI donante" />
+                        <TextField fx:id="txtDniDonante" layoutX="235.0" layoutY="80.0" />
+                        <Button fx:id="btnConsultarDonaciones" layoutX="562.0" layoutY="80.0" mnemonicParsing="false" onAction="#listenerBotonConsultarDonaciones" text="Consultar donaciones">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="176.0" layoutY="155.0" text="Nombre donante:" />
+                        <Label layoutX="562.0" layoutY="155.0" text="Tipo sangre:" />
+                        <Label fx:id="lblSetNombreDonante" layoutX="323.0" layoutY="155.0" />
+                        <Label fx:id="lblSetTipoSangre" layoutX="648.0" layoutY="155.0" />
+                        <TableView fx:id="tblDonaciones" layoutX="117.0" layoutY="227.0" prefHeight="249.0" prefWidth="909.0">
+                          <columns>
+                            <TableColumn fx:id="tbcCodSanitario" prefWidth="143.0" text="Cod. Sanitario" />
+                            <TableColumn fx:id="tbcNomSanitario" prefWidth="262.0" text="Nombre sanitario" />
+                              <TableColumn fx:id="tbcFecha" prefWidth="120.0" text="Fecha" />
+                              <TableColumn fx:id="tbcCantidad" prefWidth="177.0" text="Cantidad (ml)" />
+                              <TableColumn fx:id="tbcIncidencia" prefWidth="206.0" text="Incidencia" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Compatibilidad">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="82.0" layoutY="93.0" text="Grupo sanguíneo" />
+                        <Label layoutX="82.0" layoutY="161.0" text="Factor RH" />
+                        <ChoiceBox fx:id="ChoiceGruSan" layoutX="271.0" layoutY="88.0" prefWidth="150.0" />
+                        <ChoiceBox fx:id="ChoicefactorRH" layoutX="271.0" layoutY="156.0" prefWidth="150.0" />
+                        <Button fx:id="btnAveriguar" layoutX="82.0" layoutY="248.0" mnemonicParsing="false" onAction="#listenerBotonAveriguar" prefHeight="48.0" prefWidth="297.0" text="Averiguar compatibilidad" />
+                        <TableView fx:id="tbCompapda" layoutX="625.0" layoutY="72.0" prefHeight="385.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn fx:id="tcpda" prefWidth="199.0" text="Puede donar a" />
+                          </columns>
+                        </TableView>
+                        <TableView fx:id="tbCompaprd" layoutX="825.0" layoutY="72.0" prefHeight="385.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn fx:id="tcprd" prefWidth="199.0" text="Puede recibir de" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
